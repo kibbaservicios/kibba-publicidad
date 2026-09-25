@@ -1,0 +1,36 @@
+name: Purge jsDelivr Cache
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Purge version.txt
+        run: |
+          curl -s "https://purge.jsdelivr.net/gh/kibbaservicios/kibba-publicidad@main/version.txt"
+
+      - name: Purge slider1.jpg
+        run: |
+          curl -s "https://purge.jsdelivr.net/gh/kibbaservicios/kibba-publicidad@main/slider/slider1.jpg"
+
+      - name: Purge slider2.jpg
+        run: |
+          curl -s "https://purge.jsdelivr.net/gh/kibbaservicios/kibba-publicidad@main/slider/slider2.jpg"
+
+      - name: Purge slider3.jpg
+        run: |
+          curl -s "https://purge.jsdelivr.net/gh/kibbaservicios/kibba-publicidad@main/slider/slider3.jpg"
+
+      - name: Purge slider4.jpg
+        run: |
+          curl -s "https://purge.jsdelivr.net/gh/kibbaservicios/kibba-publicidad@main/slider/slider4.jpg"
+
+      - name: Purge slider5.jpg
+        run: |
+          curl -s "https://purge.jsdelivr.net/gh/kibbaservicios/kibba-publicidad@main/slider/slider5.jpg"
